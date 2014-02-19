@@ -51,12 +51,20 @@ default['mysql']['server_debian_password'] = 'mysql'
 
 # baserCMS
 default[:basercms][:install_path]   = '/var/www/basercms'
-# default[:basercms][:app_tmp]   = '/var/www/basercms/app/tmp'
+default[:basercms][:app_path]   = '/var/www/basercms/app'
+default[:basercms][:lib_path]   = '/var/www/basercms/lib'
 
-default[:basercms][:db][:name] = "basercms"
-default[:basercms][:db][:user] = "basercms"
-default[:basercms][:db][:pass] = "basercms"
-default[:basercms][:db][:host] = 'localhost'
+default[:basercms][:db][:name]   = "basercms"
+default[:basercms][:db][:user]   = "basercms"
+default[:basercms][:db][:pass]   = "basercms"
+default[:basercms][:db][:host]   = 'localhost'
+default[:basercms][:db][:prefix] = 'basercms'
+default[:basercms][:db][:port]   = '3306'
 
 default[:basercms][:git_repository] = 'https://github.com/basercms/basercms.git';
 default[:basercms][:git_revision]   = 'basercms-3.0.1';
+
+default[:basercms][:name]           = 'Baser CMS Site'
+default[:basercms][:password]  = '12345'
+default[:basercms][:email]     = 'demo@example.com'
+
