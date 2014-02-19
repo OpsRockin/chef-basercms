@@ -19,8 +19,10 @@ Kitchen converge
 ### kitchen commands
 
 - kitchen list
+- kitchen create
 - kitchen converge
 - kitchen destroy
+- kitchen login
 
 #### Example
 
