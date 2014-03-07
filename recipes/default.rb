@@ -28,7 +28,7 @@ git node['basercms']['install_path'] do
     action     :checkout
 end
 
-template "#{node['basercms']['install_path']}/setup.sh" do
+template "/tmp/setup.sh" do
   mode   "0644"
   user   node[:apache][:user]
   group  node[:apache][:group]
@@ -36,7 +36,7 @@ template "#{node['basercms']['install_path']}/setup.sh" do
 end
 
 execute "setup" do
-  command "sh #{node['basercms']['install_path']}/setup.sh"
+  command "sh /tmp/setup.sh"
   user    node[:apache][:user]
   group   node[:apache][:group]
   action  :run
