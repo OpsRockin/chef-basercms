@@ -26,7 +26,6 @@ default['apache']['default_modules'] = [
 # PHP
 default['php']['packages'] = [
 	'php',
-	'php-cli',
 	'php-curl',
 	'php-devel',
 	'php-gd',
@@ -38,10 +37,10 @@ default['php']['packages'] = [
 	'php-xmlrpc'
 ]
 default['php']['directives'] = {
-	"default_charset" => "UTF-8",
-	"mbstring.language" => "neutral",
+	"default_charset"            => "UTF-8",
+	"mbstring.language"          => "neutral",
 	"mbstring.internal_encoding" => "UTF-8",
-	"date.timezone" => "Asia/Tokyo"
+	"date.timezone"              => "Asia/Tokyo"
 }
 
 # MySQL
@@ -50,21 +49,23 @@ default['mysql']['server_repl_password']   = 'mysql'
 default['mysql']['server_debian_password'] = 'mysql'
 
 # baserCMS
-default[:basercms][:install_path]   = '/var/www/basercms'
-default[:basercms][:app_path]   = '/var/www/basercms/app'
-default[:basercms][:lib_path]   = '/var/www/basercms/lib'
+default[:basercms][:install_path] = '/var/www/basercms'
+default[:basercms][:app_path]     = '/var/www/basercms/app'
+default[:basercms][:lib_path]     = '/var/www/basercms/lib'
 
+# baserCMS DB
 default[:basercms][:db][:name]   = "basercms"
 default[:basercms][:db][:user]   = "basercms"
 default[:basercms][:db][:pass]   = "basercms"
 default[:basercms][:db][:host]   = 'localhost'
-default[:basercms][:db][:prefix] = 'basercms'
+default[:basercms][:db][:prefix] = 'basercms_'
 default[:basercms][:db][:port]   = '3306'
 
+# baserCMS Git
 default[:basercms][:git_repository] = 'https://github.com/basercms/basercms.git';
-default[:basercms][:git_revision]   = 'basercms-3.0.1';
+default[:basercms][:git_revision]   = 'master';
 
-default[:basercms][:name]           = 'Baser CMS Site'
-default[:basercms][:password]  = '12345'
-default[:basercms][:email]     = 'demo@example.com'
-
+# baserCMS Account
+default[:basercms][:name]     = 'Baser CMS Site'
+default[:basercms][:password] = '123456'
+default[:basercms][:email]    = 'demo@example.com'
