@@ -4,4 +4,6 @@ cookbooks/
 .ruby-version
 Gemfile.lock
 .kitchen/
-.kitchen.local.yml
+env.sh
+env2.sh
+
