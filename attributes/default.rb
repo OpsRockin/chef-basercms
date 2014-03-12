@@ -57,15 +57,7 @@ default[:basercms][:lib_path]     = '/var/www/basercms/lib'
 default[:basercms][:db][:name]   = "basercms"
 default[:basercms][:db][:user]   = "basercms"
 default[:basercms][:db][:pass]   = "basercms"
-default[:basercms][:db][:host]   = 'localhost'
-default[:basercms][:db][:prefix] = 'basercms_'
-default[:basercms][:db][:port]   = '3306'
 
 # baserCMS Git
 default[:basercms][:git_repository] = 'https://github.com/basercms/basercms.git';
 default[:basercms][:git_revision]   = 'master';
-
-# baserCMS Account
-default[:basercms][:name]     = 'Baser CMS Site'
-default[:basercms][:password] = '123456'
-default[:basercms][:email]    = 'demo@example.com'

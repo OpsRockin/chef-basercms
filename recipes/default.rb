@@ -27,17 +27,3 @@ git node['basercms']['install_path'] do
     group      node[:apache][:group]
     action     :checkout
 end
-
-template "/tmp/setup.sh" do
-  mode   "0644"
-  user   node[:apache][:user]
-  group  node[:apache][:group]
-  source "setup.sh.erb"
-end
-
-execute "setup" do
-  command "sh /tmp/setup.sh"
-  user    node[:apache][:user]
-  group   node[:apache][:group]
-  action  :run
-end

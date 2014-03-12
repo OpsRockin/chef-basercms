@@ -1,3 +1,0 @@
-#!/bin/sh
-
-<%= node['basercms']['lib_path'] %>/Cake/Console/cake -app <%= node['basercms']['app_path'] %> bc_manager install "" "mysql" "admin" "<%= node['basercms']['password'] %>" "<%= node['basercms']['email'] %>" --host "<%= node['basercms']['db']['host'] %>" --database "<%= node['basercms']['db']['name'] %>" --login "<%= node['basercms']['db']['user'] %>" --password "<%= node['basercms']['db']['pass'] %>" --prefix "<%= node['basercms']['db']['prefix'] %>" --port "<%= node['basercms']['db']['port'] %>" --smarturl "true" --baseurl "/" --data "nada-icons.default"
