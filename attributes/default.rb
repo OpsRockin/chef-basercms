@@ -44,9 +44,16 @@ default['php']['directives'] = {
 }
 
 # MySQL
-default['mysql']['server_root_password']   = 'mysql'
-default['mysql']['server_repl_password']   = 'mysql'
-default['mysql']['server_debian_password'] = 'mysql'
+if node.has_key?('ec2')
+  default['mysql']['server_root_password']   = node[:ec2][:instance_id]
+  default['mysql']['server_repl_password']   = node[:ec2][:instance_id]
+  default['mysql']['server_debian_password'] = node[:ec2][:instance_id]
+else
+  default['mysql']['server_root_password']   = 'mysql'
+  default['mysql']['server_repl_password']   = 'mysql'
+  default['mysql']['server_debian_password'] = 'mysql'
+end
+default['mysql']['bind_address'] = '127.0.0.1'
 
 # baserCMS
 default[:basercms][:install_path] = '/var/www/basercms'
@@ -56,8 +63,12 @@ default[:basercms][:lib_path]     = '/var/www/basercms/lib'
 # baserCMS DB
 default[:basercms][:db][:name]   = "basercms"
 default[:basercms][:db][:user]   = "basercms"
-default[:basercms][:db][:pass]   = "basercms"
+if node.has_key?('ec2')
+  default[:basercms][:db][:pass]   = node[:ec2][:instance_id]
+else
+  default[:basercms][:db][:pass]   = "basercms"
+end
 
 # baserCMS Git
 default[:basercms][:git_repository] = 'https://github.com/basercms/basercms.git';
-default[:basercms][:git_revision]   = 'master';
+default[:basercms][:git_revision]   = 'basercms-3.0.1';
