@@ -3,8 +3,8 @@ INSTANCE_ID=`/usr/bin/curl -s http://169.254.169.254/latest/meta-data/instance-i
 # mysql -u root -e "drop database \``echo ${INSTANCE_ID} | sed s/-/_/g`\`;"
 # mysql -u root -e "drop database \`test\`;"
 yum clean all
-# service nginx stop
-# service mysql stop
+service httpd stop
+service mysqld stop
 # service php-fpm stop
 rm -rf /tmp/*
 rm -f /etc/ssh/ssh_host_*
