@@ -12,9 +12,9 @@ platforms:
   driver_config:
     username: ec2-user
     flavor_id: m1.small
-    image_id: ami-3561fe34 # Amazon Linux AMI 2013.09.1
-    region: ap-northeast-1
-    availability_zone: ap-northeast-1a
+    image_id: <%= ENV['AWS_AMI'] %>
+    region: <%= ENV['AWS_REGION'] %>
+    availability_zone: <%= ENV['AWS_AZ'] %>
     tags:
       Name: test-kitchen-small
 
