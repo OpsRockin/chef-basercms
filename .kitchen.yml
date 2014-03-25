@@ -5,7 +5,7 @@ driver_config:
   aws_access_key_id: <%= ENV['AWS_ACCESS_KEY'] %>
   aws_secret_access_key: <%= ENV['AWS_SECRET_ACCESS_KEY'] %>
   aws_ssh_key_id: <%= ENV['AWS_EC2_KEYPAIR'] %>
-  ssh_key: <%= ENV['AWS_EC2_KEYPASS'] %>
+  ssh_key: <%= ENV['AWS_EC2_KEYPATH'] %>
 
 platforms:
 - name: amazon-linux-small-tokyo
